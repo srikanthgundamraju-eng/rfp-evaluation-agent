@@ -1,0 +1,58 @@
+{
+  "purpose": "Synthetic documents for Agentic RFP Evaluation and Supplier Ranking mini-project",
+  "template": "evaluation_template.pdf",
+  "criteria": [
+    {
+      "name": "Technical Capability",
+      "weight": 0.3,
+      "max_score": 5
+    },
+    {
+      "name": "Implementation Plan",
+      "weight": 0.2,
+      "max_score": 5
+    },
+    {
+      "name": "Commercial Value",
+      "weight": 0.2,
+      "max_score": 5
+    },
+    {
+      "name": "Security & Compliance",
+      "weight": 0.2,
+      "max_score": 5
+    },
+    {
+      "name": "Support & Experience",
+      "weight": 0.1,
+      "max_score": 5
+    }
+  ],
+  "suppliers": [
+    {
+      "name": "Apex Systems",
+      "file": "apex_systems_proposal.pdf",
+      "profile": "Strong technical capability and security; higher price; moderate schedule confidence.",
+      "historical_experience_rating": 4.2
+    },
+    {
+      "name": "BrightPath Tech",
+      "file": "brightpath_tech_proposal.pdf",
+      "profile": "Lowest price and fastest delivery; weak compliance detail and limited relevant experience.",
+      "historical_experience_rating": 2.4
+    },
+    {
+      "name": "NexaWorks",
+      "file": "nexaworks_proposal.pdf",
+      "profile": "Balanced proposal; strongest implementation detail and support model; mid-range price.",
+      "historical_experience_rating": 4.0
+    },
+    {
+      "name": "Orbit Digital",
+      "file": "orbit_digital_proposal.pdf",
+      "profile": "Strong experience and references; medium price; integration approach is vague.",
+      "historical_experience_rating": 4.5
+    }
+  ],
+  "note": "All companies, dates, ratings, prices, project details and references are fictional. Proposal differences intentionally test scoring and ranking."
+}

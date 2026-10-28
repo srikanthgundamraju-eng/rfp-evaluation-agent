@@ -1,0 +1,12 @@
+.env
+.env.*
+!.env.example
+.venv/
+venv/
+__pycache__/
+.pytest_cache/
+*.py[cod]
+database/*.db
+database/*.db-*
+outputs/
+chroma_db/
