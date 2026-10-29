@@ -1,0 +1,302 @@
+[
+  {
+    "name": "Apex Systems",
+    "file_name": "apex_systems_proposal.pdf",
+    "criteria": [
+      {
+        "criterion_id": 1,
+        "name": "Technical Capability",
+        "score": 3.0,
+        "max_score": 4.0,
+        "weight": 0.3,
+        "justification": "The proposal demonstrates strong technical capability with a detailed architecture and security-first operating model, but lacks a complete sample runbook which limits the score.",
+        "evidence": "Architecture and controls are detailed, but a complete sample runbook is not included.",
+        "benchmark_score": 3.0,
+        "gap": 0.0,
+        "relative_performance_pct": 100.0
+      },
+      {
+        "criterion_id": 2,
+        "name": "Implementation Plan",
+        "score": 4.0,
+        "max_score": 5.0,
+        "weight": 0.2,
+        "justification": "The delivery plan includes a clear timeline and roles, but lacks detailed milestones and testing specifics which prevents a perfect score.",
+        "evidence": "Discovery 4 weeks; architecture 5; pilot 4; migration waves 12; stabilization 3. Total 28 weeks.",
+        "benchmark_score": 4.0,
+        "gap": 0.0,
+        "relative_performance_pct": 100.0
+      },
+      {
+        "criterion_id": 3,
+        "name": "Commercial Value",
+        "score": 3.0,
+        "max_score": 5.0,
+        "weight": 0.2,
+        "justification": "The proposal provides a clear commercial value with pricing details, but lacks transparency on total costs and assumptions, which affects the score.",
+        "evidence": "INR 1.42 crore implementation; optional 12-month support INR 18 lakh.",
+        "benchmark_score": 3.0,
+        "gap": 0.0,
+        "relative_performance_pct": 100.0
+      },
+      {
+        "criterion_id": 4,
+        "name": "Security & Compliance",
+        "score": 3.0,
+        "max_score": 5.0,
+        "weight": 0.2,
+        "justification": "The proposal outlines security measures but lacks current certification evidence and details on data residency and retention, which limits the score.",
+        "evidence": "Claims ISO 27001-aligned practices but attaches no current certificate.",
+        "benchmark_score": 3.0,
+        "gap": 0.0,
+        "relative_performance_pct": 100.0
+      },
+      {
+        "criterion_id": 5,
+        "name": "Support & Experience",
+        "score": 2.0,
+        "max_score": 5.0,
+        "weight": 0.1,
+        "justification": "The proposal mentions support coverage and comparable migrations but lacks detailed references and service levels, resulting in a lower score.",
+        "evidence": "8x5 support plus 24x7 P1 response; two comparable migrations are mentioned; contacts only after shortlisting.",
+        "benchmark_score": 4.0,
+        "gap": -2.0,
+        "relative_performance_pct": 50.0
+      }
+    ],
+    "risks": [
+      "Higher price; limited schedule buffer; certification claim lacks attached evidence; customer dependencies may delay migration."
+    ],
+    "overall_summary": "Apex Systems presents a technically robust proposal with strong security measures and a clear implementation plan. However, gaps in evidence for certifications, detailed milestones, and references impact the overall score.",
+    "submission_date": "2026-10-28",
+    "experience_rating": 3.0,
+    "absolute_score": 0.665,
+    "ppi": 95.0,
+    "final_rank": 1
+  },
+  {
+    "name": "Nexaworks",
+    "file_name": "nexaworks_proposal.pdf",
+    "criteria": [
+      {
+        "criterion_id": 1,
+        "name": "Technical Capability",
+        "score": 2.0,
+        "max_score": 4.0,
+        "weight": 0.3,
+        "justification": "The proposal outlines a technical solution with a structured approach, but lacks environment-specific diagrams and certification evidence.",
+        "evidence": "Diagrams are conceptual, not environment-specific; environment-specific architecture and certification evidence missing.",
+        "benchmark_score": 3.0,
+        "gap": -1.0,
+        "relative_performance_pct": 66.66666666666666
+      },
+      {
+        "criterion_id": 2,
+        "name": "Implementation Plan",
+        "score": 4.0,
+        "max_score": 5.0,
+        "weight": 0.2,
+        "justification": "The implementation plan is detailed with a clear timeline and defined roles, but lacks specific milestones and testing details.",
+        "evidence": "Discovery 3 weeks; design 4; foundation 4; pilot 3; migration waves 10; stabilization and handover 3. Total 27 weeks. Roles include delivery manager, architect, data engineers, QA automation engineer, security specialist and operations lead.",
+        "benchmark_score": 4.0,
+        "gap": 0.0,
+        "relative_performance_pct": 100.0
+      },
+      {
+        "criterion_id": 3,
+        "name": "Commercial Value",
+        "score": 3.0,
+        "max_score": 5.0,
+        "weight": 0.2,
+        "justification": "The commercial proposal includes pricing and assumptions but lacks a detailed out-of-scope rate card and clarity on some costs.",
+        "evidence": "INR 1.08 crore implementation plus separately shown 10% contingency; 12-month support INR 14 lakh. Includes assumptions and change control, but no detailed out-of-scope rate card.",
+        "benchmark_score": 3.0,
+        "gap": 0.0,
+        "relative_performance_pct": 100.0
+      },
+      {
+        "criterion_id": 4,
+        "name": "Security & Compliance",
+        "score": 3.0,
+        "max_score": 5.0,
+        "weight": 0.2,
+        "justification": "Security measures are mentioned, but there is no certification evidence and some details on data protection are missing.",
+        "evidence": "RBAC, service identities, encryption, audit logs, secret rotation, environment separation and pre-go-live review. ISO-aligned practices claimed without certificate. Data deletion and retention need detail.",
+        "benchmark_score": 3.0,
+        "gap": 0.0,
+        "relative_performance_pct": 100.0
+      },
+      {
+        "criterion_id": 5,
+        "name": "Support & Experience",
+        "score": 4.0,
+        "max_score": 5.0,
+        "weight": 0.1,
+        "justification": "The support model is well-defined with relevant client examples, but lacks detailed service levels in the acceptance approach.",
+        "evidence": "90-day hypercare; 8x5 operations; 24x7 P1 on-call; 30-minute acknowledgement; runbooks; knowledge transfer; monthly reviews and quarterly improvements. Two anonymized relevant client examples; references available for due diligence.",
+        "benchmark_score": 4.0,
+        "gap": 0.0,
+        "relative_performance_pct": 100.0
+      }
+    ],
+    "risks": [
+      "Environment-specific architecture and certification evidence missing; rate card and retention procedures need clarification."
+    ],
+    "overall_summary": "Nexaworks presents a balanced proposal with strengths in implementation planning and support, but has notable gaps in technical specifics, commercial clarity, and security certifications.",
+    "submission_date": "2026-10-28",
+    "experience_rating": 3.0,
+    "absolute_score": 0.6300000000000001,
+    "ppi": 90.0,
+    "final_rank": 2
+  },
+  {
+    "name": "Orbit Digital",
+    "file_name": "orbit_digital_proposal.pdf",
+    "criteria": [
+      {
+        "criterion_id": 1,
+        "name": "Technical Capability",
+        "score": 2.0,
+        "max_score": 4.0,
+        "weight": 0.3,
+        "justification": "Technical capability is partially demonstrated but lacks specific integration patterns and performance targets.",
+        "evidence": "Hybrid modernization using standard connectors and staged migration. Includes discovery workshops and data quality checks, but does not identify integration patterns for legacy systems, dependency resolution or workload-specific performance targets.",
+        "benchmark_score": 3.0,
+        "gap": -1.0,
+        "relative_performance_pct": 66.66666666666666
+      },
+      {
+        "criterion_id": 2,
+        "name": "Implementation Plan",
+        "score": 3.0,
+        "max_score": 5.0,
+        "weight": 0.2,
+        "justification": "Implementation plan provides a timeline and roles but lacks detail on staffing percentages and specialist availability.",
+        "evidence": "Discovery 4 weeks; design 3; platform setup 4; migration 11; stabilization 3. Total 25 weeks. Roles include program director, architect, migration lead, engineers and support lead. Staffing percentages and specialist availability are unspecified.",
+        "benchmark_score": 4.0,
+        "gap": -1.0,
+        "relative_performance_pct": 75.0
+      },
+      {
+        "criterion_id": 3,
+        "name": "Commercial Value",
+        "score": 2.0,
+        "max_score": 5.0,
+        "weight": 0.2,
+        "justification": "Commercial value is mentioned but lacks clarity on additional costs and assumptions.",
+        "evidence": "INR 1.12 crore implementation; annual support INR 16 lakh. Cloud and licenses excluded. Includes change-control board and monthly financial tracking. Travel, cleansing and after-hours cutover costs are unclear.",
+        "benchmark_score": 3.0,
+        "gap": -1.0,
+        "relative_performance_pct": 66.66666666666666
+      },
+      {
+        "criterion_id": 4,
+        "name": "Security & Compliance",
+        "score": 2.0,
+        "max_score": 5.0,
+        "weight": 0.2,
+        "justification": "Security and compliance measures are mentioned, but there is no evidence of a named framework or certification.",
+        "evidence": "MFA, RBAC, encryption, audit logging, backup controls and annual penetration testing. No named framework or certification evidence. Incident response responsibilities and log retention are not detailed.",
+        "benchmark_score": 3.0,
+        "gap": -1.0,
+        "relative_performance_pct": 66.66666666666666
+      },
+      {
+        "criterion_id": 5,
+        "name": "Support & Experience",
+        "score": 4.0,
+        "max_score": 5.0,
+        "weight": 0.1,
+        "justification": "Support and experience are well-documented with credible references and support commitments.",
+        "evidence": "24x7 P1 support; 45-minute acknowledgement; service manager; quarterly reviews; 60-day hypercare. Three enterprise data program reference summaries; details on request.",
+        "benchmark_score": 4.0,
+        "gap": 0.0,
+        "relative_performance_pct": 100.0
+      }
+    ],
+    "risks": [
+      "Integration design vague; specialist staffing not quantified; commercial exclusions unclear; limited security framework evidence."
+    ],
+    "overall_summary": "Orbit Digital presents a proposal with strengths in support and experience but lacks sufficient detail in technical capability, implementation planning, commercial value, and security compliance.",
+    "submission_date": "2026-10-28",
+    "experience_rating": 3.0,
+    "absolute_score": 0.51,
+    "ppi": 71.66666666666666,
+    "final_rank": 3
+  },
+  {
+    "name": "Brightpath Tech",
+    "file_name": "brightpath_tech_proposal.pdf",
+    "criteria": [
+      {
+        "criterion_id": 1,
+        "name": "Technical Capability",
+        "score": 1.0,
+        "max_score": 4.0,
+        "weight": 0.3,
+        "justification": "Limited evidence of technical capability, particularly in complex migration delivery and performance criteria.",
+        "evidence": "No detailed target architecture, workload sizing, performance acceptance criteria or clear rollback method.",
+        "benchmark_score": 3.0,
+        "gap": -2.0,
+        "relative_performance_pct": 33.33333333333333
+      },
+      {
+        "criterion_id": 2,
+        "name": "Implementation Plan",
+        "score": 3.0,
+        "max_score": 5.0,
+        "weight": 0.2,
+        "justification": "A basic implementation plan is provided, but lacks detail on milestones and testing.",
+        "evidence": "Discovery 2 weeks; setup 2; pilot 2; migration 6; handover 1. Total 13 weeks. Team: project lead, two engineers and shared tester.",
+        "benchmark_score": 4.0,
+        "gap": -1.0,
+        "relative_performance_pct": 75.0
+      },
+      {
+        "criterion_id": 3,
+        "name": "Commercial Value",
+        "score": 2.0,
+        "max_score": 5.0,
+        "weight": 0.2,
+        "justification": "Commercial proposal lacks transparency in change request pricing and does not define caps.",
+        "evidence": "Change requests may be billed separately, but rates and cap are not defined.",
+        "benchmark_score": 3.0,
+        "gap": -1.0,
+        "relative_performance_pct": 66.66666666666666
+      },
+      {
+        "criterion_id": 4,
+        "name": "Security & Compliance",
+        "score": 1.0,
+        "max_score": 5.0,
+        "weight": 0.2,
+        "justification": "Weak security and compliance details provided, lacking critical elements.",
+        "evidence": "Does not detail least-privilege reviews, centralized logs, vulnerability management, incident response, retention or certification.",
+        "benchmark_score": 3.0,
+        "gap": -2.0,
+        "relative_performance_pct": 33.33333333333333
+      },
+      {
+        "criterion_id": 5,
+        "name": "Support & Experience",
+        "score": 1.0,
+        "max_score": 5.0,
+        "weight": 0.1,
+        "justification": "Limited relevant experience and support coverage described.",
+        "evidence": "No P1 target, on-call coverage, service credits or escalation path. One small analytics project; no named enterprise migration reference.",
+        "benchmark_score": 4.0,
+        "gap": -3.0,
+        "relative_performance_pct": 25.0
+      }
+    ],
+    "risks": [
+      "Compressed schedule; weak security evidence; limited references; unclear change-request pricing and support commitments."
+    ],
+    "overall_summary": "Brightpath Tech's proposal presents significant gaps in technical capability, security compliance, and support experience, which raises concerns about their ability to deliver a robust solution.",
+    "submission_date": "2026-10-28",
+    "experience_rating": 3.0,
+    "absolute_score": 0.3350000000000001,
+    "ppi": 47.49999999999999,
+    "final_rank": 4
+  }
+]
