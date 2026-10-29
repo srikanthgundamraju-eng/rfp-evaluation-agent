@@ -1,7 +1,31 @@
-from src.evaluation_agent import evaluate_document
 
-def evaluate_supplier(supplier_name, document_text, criteria, api_key, file_name=""):
-    scorecard, warnings = evaluate_document(supplier_name, document_text, criteria, api_key)
+from src.evaluation_agent import evaluate_document
+from src.rag_retriever import retrieve_relevant_chunks
+
+
+def evaluate_supplier(
+    supplier_name,
+    document_text,
+    criteria,
+    api_key,
+    file_name="",
+):
+    """Coordinate evidence retrieval and supplier evaluation."""
+
+    retrieved_evidence = retrieve_relevant_chunks(
+        document_text=document_text,
+        criteria=criteria,
+        api_key=api_key,
+    )
+
+    scorecard, warnings = evaluate_document(
+        supplier_name=supplier_name,
+        document_text=document_text,
+        criteria=criteria,
+        api_key=api_key,
+        retrieved_evidence=retrieved_evidence,
+    )
+
     result = {
         "name": supplier_name,
         "file_name": file_name,
@@ -9,4 +33,5 @@ def evaluate_supplier(supplier_name, document_text, criteria, api_key, file_name
         "risks": scorecard["risks"],
         "overall_summary": scorecard["overall_summary"],
     }
+
     return result, warnings
