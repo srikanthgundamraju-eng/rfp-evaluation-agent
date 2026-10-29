@@ -1,0 +1,306 @@
+[
+  {
+    "name": "Silverline Enterprise",
+    "file_name": "silverline_enterprise_proposal.pdf",
+    "criteria": [
+      {
+        "criterion_id": 1,
+        "name": "Technical Capability",
+        "score": 4.0,
+        "max_score": 5.0,
+        "weight": 0.3,
+        "justification": "The proposal demonstrates strong technical capability with a service-oriented architecture and documented APIs, but lacks supporting benchmark reports for performance.",
+        "evidence": "The solution uses a service-oriented architecture, documented APIs, centralized monitoring, and a relational data store. It includes separate development, test, and production environments and describes backup restoration tests. Performance targets are stated, but supporting benchmark reports are not attached.",
+        "benchmark_score": 4.0,
+        "gap": 0.0,
+        "relative_performance_pct": 100.0
+      },
+      {
+        "criterion_id": 2,
+        "name": "Implementation Plan",
+        "score": 5.0,
+        "max_score": 5.0,
+        "weight": 0.2,
+        "justification": "The implementation plan is detailed with a clear timeline, milestones, and exit criteria for each phase, indicating a well-structured approach.",
+        "evidence": "The supplier proposes a 16-week rollout with discovery, architecture approval, configuration, integration testing, business acceptance, and controlled production transition. Each phase has exit criteria and sign-off points. The proposal includes a change-control board and formal training materials.",
+        "benchmark_score": 5.0,
+        "gap": 0.0,
+        "relative_performance_pct": 100.0
+      },
+      {
+        "criterion_id": 3,
+        "name": "Commercial Value",
+        "score": 4.0,
+        "max_score": 5.0,
+        "weight": 0.2,
+        "justification": "The commercial value is transparent with detailed pricing, but the overall cost is at the upper end, which may pose a risk for budget constraints.",
+        "evidence": "Implementation fee: \u00a35,000,000. Annual support: \u00a3900,000. Includes four integrations, data migration support, administrator training, and 90 days of hypercare. The proposal provides a three-year cost summary.",
+        "benchmark_score": 4.0,
+        "gap": 0.0,
+        "relative_performance_pct": 100.0
+      },
+      {
+        "criterion_id": 4,
+        "name": "Security & Compliance",
+        "score": 4.0,
+        "max_score": 5.0,
+        "weight": 0.2,
+        "justification": "The proposal outlines strong security measures and compliance practices, but lacks the actual certification documents as evidence.",
+        "evidence": "Silverline describes encryption at rest and in transit, MFA, privileged-access reviews, centralized audit trails, annual penetration tests, and documented incident management. It claims an active ISO 27001 certification and offers to provide the certificate and audit summary during due diligence; these are not appended to this proposal.",
+        "benchmark_score": 4.0,
+        "gap": 0.0,
+        "relative_performance_pct": 100.0
+      },
+      {
+        "criterion_id": 5,
+        "name": "Support & Experience",
+        "score": 4.0,
+        "max_score": 5.0,
+        "weight": 0.1,
+        "justification": "The supplier has significant experience and offers robust support, but references are only available subject to client approval, which limits verification.",
+        "evidence": "The supplier reports 11 years of enterprise delivery experience and summarizes five projects with comparable integration complexity. It offers 24x7 critical-incident support, a 30-minute initial response target for severity-one issues, and a named service manager. References are available subject to client approval.",
+        "benchmark_score": 4.0,
+        "gap": 0.0,
+        "relative_performance_pct": 100.0
+      }
+    ],
+    "risks": [
+      "Lack of supporting benchmark reports for performance claims.",
+      "Absence of actual ISO 27001 certification documents.",
+      "References are subject to client approval, limiting verification."
+    ],
+    "overall_summary": "Silverline Enterprise presents a strong proposal with solid technical capabilities, a detailed implementation plan, and robust security measures. However, the absence of supporting evidence for performance and certification, along with the upper-end pricing, introduces potential risks.",
+    "submission_date": "2026-10-29",
+    "experience_rating": 3.0,
+    "absolute_score": 0.8400000000000001,
+    "ppi": 100.0,
+    "final_rank": 1
+  },
+  {
+    "name": "Northstar Digital",
+    "file_name": "northstar_digital_proposal.pdf",
+    "criteria": [
+      {
+        "criterion_id": 1,
+        "name": "Technical Capability",
+        "score": 3.0,
+        "max_score": 5.0,
+        "weight": 0.3,
+        "justification": "The proposal outlines a cloud-hosted architecture with features like horizontal scaling and disaster recovery, but lacks detailed performance metrics.",
+        "evidence": "The proposed architecture includes a cloud-hosted application tier, managed relational database, API gateway, monitoring, and automated deployment pipelines. The proposal describes horizontal scaling and a disaster-recovery environment, but gives few quantified load-test results.",
+        "benchmark_score": 4.0,
+        "gap": -1.0,
+        "relative_performance_pct": 75.0
+      },
+      {
+        "criterion_id": 2,
+        "name": "Implementation Plan",
+        "score": 5.0,
+        "max_score": 5.0,
+        "weight": 0.2,
+        "justification": "The implementation plan is detailed with a clear timeline and defined milestones, including customer dependencies and governance structures.",
+        "evidence": "A 10-week implementation is proposed: requirements confirmation (1 week), design (2), build and integrations (4), acceptance testing (2), and launch (1). The plan includes sprint reviews, weekly status reports, decision logs, and a named delivery manager role. Customer dependencies are listed.",
+        "benchmark_score": 5.0,
+        "gap": 0.0,
+        "relative_performance_pct": 100.0
+      },
+      {
+        "criterion_id": 3,
+        "name": "Commercial Value",
+        "score": 4.0,
+        "max_score": 5.0,
+        "weight": 0.2,
+        "justification": "The proposal provides clear pricing and a milestone-based payment schedule, though it is noted as comparatively high-cost.",
+        "evidence": "Implementation fee: \u00a362,00,000. Annual support: \u00a310,00,000. Includes three integrations, two administrator workshops, user training, and 90 days of hypercare. The proposal includes a milestone-based payment schedule.",
+        "benchmark_score": 4.0,
+        "gap": 0.0,
+        "relative_performance_pct": 100.0
+      },
+      {
+        "criterion_id": 4,
+        "name": "Security & Compliance",
+        "score": 2.0,
+        "max_score": 5.0,
+        "weight": 0.2,
+        "justification": "While the proposal mentions encryption and multi-factor authentication, it lacks current security certifications and specific compliance evidence.",
+        "evidence": "The supplier describes encryption, multi-factor authentication for administrators, vulnerability scanning, and incident escalation. It states that certification work is in progress; no current ISO 27001 or SOC 2 evidence is attached. Data residency and retention terms require confirmation.",
+        "benchmark_score": 4.0,
+        "gap": -2.0,
+        "relative_performance_pct": 50.0
+      },
+      {
+        "criterion_id": 5,
+        "name": "Support & Experience",
+        "score": 4.0,
+        "max_score": 5.0,
+        "weight": 0.1,
+        "justification": "The supplier has relevant experience and offers 24x7 support, but references are only available upon request.",
+        "evidence": "Northstar reports eight years of cloud delivery work and describes four projects in regulated or business-critical environments. It offers 24x7 support for critical incidents with a one-hour initial response target. Reference contact details are available on request.",
+        "benchmark_score": 4.0,
+        "gap": 0.0,
+        "relative_performance_pct": 100.0
+      }
+    ],
+    "risks": [
+      "No current independent security certification available, limited quantified performance evidence, and data residency/retention details need to be contractually specified."
+    ],
+    "overall_summary": "Northstar Digital presents a strong proposal with a solid implementation plan and relevant experience, but it has notable gaps in security compliance evidence and performance metrics.",
+    "submission_date": "2026-10-29",
+    "experience_rating": 3.0,
+    "absolute_score": 0.7000000000000002,
+    "ppi": 82.5,
+    "final_rank": 2
+  },
+  {
+    "name": "Cedarwave Solutions",
+    "file_name": "cedarwave_solutions_proposal.pdf",
+    "criteria": [
+      {
+        "criterion_id": 1,
+        "name": "Technical Capability",
+        "score": 3.0,
+        "max_score": 5.0,
+        "weight": 0.3,
+        "justification": "The proposal demonstrates a solid technical capability with a modular architecture and various security features, but lacks independent benchmark results for performance.",
+        "evidence": "The solution uses a modular web application, REST APIs, role-based access control, audit logging, and a PostgreSQL-backed data layer. It identifies a target availability of 99.5%, but does not include independent benchmark results.",
+        "benchmark_score": 4.0,
+        "gap": -1.0,
+        "relative_performance_pct": 75.0
+      },
+      {
+        "criterion_id": 2,
+        "name": "Implementation Plan",
+        "score": 3.0,
+        "max_score": 5.0,
+        "weight": 0.2,
+        "justification": "The implementation plan outlines a clear timeline and phases but lacks detailed named resource allocations.",
+        "evidence": "Delivery is planned over 14 weeks: discovery (2 weeks), solution design (2), configuration and integration (5), user acceptance testing (3), and production rollout and handover (2). A weekly steering meeting and a RAID log are proposed. Detailed named resource allocations are not included.",
+        "benchmark_score": 5.0,
+        "gap": -2.0,
+        "relative_performance_pct": 60.0
+      },
+      {
+        "criterion_id": 3,
+        "name": "Commercial Value",
+        "score": 4.0,
+        "max_score": 5.0,
+        "weight": 0.2,
+        "justification": "The proposal provides clear pricing details and includes various services, but does not fully address potential commercial risks.",
+        "evidence": "Fixed implementation fee: \u00a348,00,000. Annual support: \u00a38,00,000. The price includes configuration, two standard integrations, training for up to 30 users, and 60 days of post-launch hypercare. Additional integrations are charged separately at agreed rates.",
+        "benchmark_score": 4.0,
+        "gap": 0.0,
+        "relative_performance_pct": 100.0
+      },
+      {
+        "criterion_id": 4,
+        "name": "Security & Compliance",
+        "score": 3.0,
+        "max_score": 5.0,
+        "weight": 0.2,
+        "justification": "The security measures are well-defined, but the lack of a current compliance certificate is a significant gap.",
+        "evidence": "Controls include encryption in transit and at rest, least-privilege access, quarterly access reviews, centralized audit logs, and a documented incident-response process. The supplier states that it aligns with ISO 27001 practices but has not attached a current certificate or independent audit report.",
+        "benchmark_score": 4.0,
+        "gap": -1.0,
+        "relative_performance_pct": 75.0
+      },
+      {
+        "criterion_id": 5,
+        "name": "Support & Experience",
+        "score": 4.0,
+        "max_score": 5.0,
+        "weight": 0.1,
+        "justification": "The supplier has relevant experience and support coverage, but customer references are only available post-shortlisting.",
+        "evidence": "CedarWave reports six years of enterprise implementation experience and lists three anonymized workflow projects. Support is available 8x5 with a four-hour response target for high-priority incidents. Customer references can be provided after shortlisting.",
+        "benchmark_score": 4.0,
+        "gap": 0.0,
+        "relative_performance_pct": 100.0
+      }
+    ],
+    "risks": [
+      "No independent performance benchmark provided.",
+      "No current compliance certificate attached.",
+      "No named project team included."
+    ],
+    "overall_summary": "Cedarwave Solutions presents a comprehensive proposal with strengths in technical capability, implementation planning, and support experience. However, significant risks exist due to missing independent benchmarks and compliance documentation.",
+    "submission_date": "2026-10-29",
+    "experience_rating": 3.0,
+    "absolute_score": 0.6600000000000001,
+    "ppi": 79.5,
+    "final_rank": 3
+  },
+  {
+    "name": "Greenfield Technology",
+    "file_name": "greenfield_technology_proposal.pdf",
+    "criteria": [
+      {
+        "criterion_id": 1,
+        "name": "Technical Capability",
+        "score": 2.0,
+        "max_score": 5.0,
+        "weight": 0.3,
+        "justification": "The proposal outlines a configurable web portal with some technical features but lacks critical details such as architecture diagrams and recovery objectives.",
+        "evidence": "The proposed product is a configurable web portal with standard reporting and a REST API. It supports role-based permissions and CSV exports. The proposal does not include architecture diagrams, capacity estimates, recovery objectives, or test results.",
+        "benchmark_score": 4.0,
+        "gap": -2.0,
+        "relative_performance_pct": 50.0
+      },
+      {
+        "criterion_id": 2,
+        "name": "Implementation Plan",
+        "score": 2.0,
+        "max_score": 5.0,
+        "weight": 0.2,
+        "justification": "The implementation plan provides a rough timeline but lacks detailed task-level information and critical decision points.",
+        "evidence": "The supplier estimates eight weeks for delivery, with configuration, integration, testing, and launch listed as major phases. The schedule has limited task-level detail and does not identify customer decision dates, acceptance criteria, or named technical leads.",
+        "benchmark_score": 5.0,
+        "gap": -3.0,
+        "relative_performance_pct": 40.0
+      },
+      {
+        "criterion_id": 3,
+        "name": "Commercial Value",
+        "score": 4.0,
+        "max_score": 5.0,
+        "weight": 0.2,
+        "justification": "The proposal provides clear pricing information and outlines the costs associated with implementation and support, but lacks detail on potential additional costs.",
+        "evidence": "Implementation fee: \u00a334,00,000. Annual support: \u00a37,50,000. Includes one standard integration and remote training for up to 20 users. Additional integrations, data migration beyond the stated allowance, and onsite work are priced separately.",
+        "benchmark_score": 4.0,
+        "gap": 0.0,
+        "relative_performance_pct": 100.0
+      },
+      {
+        "criterion_id": 4,
+        "name": "Security & Compliance",
+        "score": 1.0,
+        "max_score": 5.0,
+        "weight": 0.2,
+        "justification": "The security and compliance section mentions some basic controls but lacks comprehensive evidence and details on encryption and vulnerability management.",
+        "evidence": "The proposal mentions TLS, password policies, and periodic backups. It does not describe encryption at rest, a formal vulnerability-management process, independent penetration testing, or a current security certification.",
+        "benchmark_score": 4.0,
+        "gap": -3.0,
+        "relative_performance_pct": 25.0
+      },
+      {
+        "criterion_id": 5,
+        "name": "Support & Experience",
+        "score": 2.0,
+        "max_score": 5.0,
+        "weight": 0.1,
+        "justification": "The supplier has some experience but provides limited project summaries and lacks customer references, which raises concerns about support reliability.",
+        "evidence": "Greenfield reports three years of product implementation experience and provides two short project summaries without customer references. Support is available 10x5 with next-business-day response for standard issues.",
+        "benchmark_score": 4.0,
+        "gap": -2.0,
+        "relative_performance_pct": 50.0
+      }
+    ],
+    "risks": [
+      "Incomplete architecture and recovery details, limited security controls evidence, no confirmed customer references, and several exclusions that may increase total cost."
+    ],
+    "overall_summary": "Greenfield Technology's proposal presents a cost-effective solution with a reasonable timeline but lacks critical details in technical capability, security, and support experience, which raises concerns about the overall reliability and robustness of the offering.",
+    "submission_date": "2026-10-29",
+    "experience_rating": 3.0,
+    "absolute_score": 0.44000000000000006,
+    "ppi": 53.0,
+    "final_rank": 4
+  }
+]
