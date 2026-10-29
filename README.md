@@ -2,7 +2,7 @@
 
 A Streamlit application that evaluates supplier proposal PDFs against configurable criteria, generates evidence-based scorecards with an LLM, calculates weighted and peer-relative scores in Python, ranks suppliers deterministically, and stores evaluation runs in SQLite.
 
-> **Demo data:** The included proposals and Run 8 output are synthetic examples. Scores are decision-support signals, not a substitute for procurement due diligence or human review.
+> **Demo data:** The included proposals and Run 3/Run 8 outputs are synthetic examples. Scores are decision-support signals, not a substitute for procurement due diligence or human review.
 
 ## Features
 
@@ -10,7 +10,7 @@ A Streamlit application that evaluates supplier proposal PDFs against configurab
 - Require active criterion weights to total 100% before evaluation.
 - Upload multiple supplier proposal PDFs and provide supplier name, submission date, and historical experience rating.
 - Extract text from PDFs and request a JSON scorecard from an LLM.
-- Validate/normalize scorecards before scoring.
+- Validate and normalize scorecards before scoring.
 - Calculate weighted absolute scores, per-criterion peer benchmarks, gaps, relative performance, and Peer Performance Index (PPI) in Python.
 - Apply deterministic ranking and tie-break rules.
 - Persist criteria snapshots, run statuses, warnings, and supplier results in SQLite.
@@ -36,9 +36,9 @@ A Streamlit application that evaluates supplier proposal PDFs against configurab
 6. **Orchestrator (`src/orchestrator.py`)** — coordinates evaluation for a supplier.
 7. **Batch processor (`src/batch_processor.py`)** — processes suppliers independently, collects warnings, and ranks successful evaluations.
 8. **Scoring (`src/scoring.py`)** — performs all arithmetic, peer benchmarking, and ranking deterministically.
-9. **Persistence and presentation** — results and warnings are saved in SQLite and presented in Leaderboard and Run Details screens.
+9. **Persistence and presentation** — results and warnings are saved in SQLite and presented in the Leaderboard and Run Details screens.
 
-The LLM evaluates proposal evidence; it does **not** calculate the final weighted score, peer benchmark, PPI, or rank.
+The LLM evaluates proposal evidence; it **does not** calculate the final weighted score, peer benchmark, PPI, or rank.
 
 ## Default criteria
 
@@ -79,6 +79,7 @@ PPI is a peer-relative measure and can differ from the absolute weighted score. 
 ### Deterministic ranking
 
 The application sorts by:
+
 1. Higher PPI first.
 2. Earlier submission date first.
 3. Higher historical experience rating first.
@@ -89,14 +90,18 @@ Ranks `1, 2, 3, ...` are assigned after sorting. The LLM does not determine rank
 ## Project structure
 
 ```text
-.
+rfp-evaluation-agent-starter/
 ├── app.py
 ├── requirements.txt
 ├── README.md
+├── SOLUTION_SPEC.md
+├── .env.example
+├── .gitignore
 ├── database/
-│   ├── db.py
-│   └── rfp_evaluation.db       # local runtime database; excluded from Git
+│   ├── __init__.py
+│   └── db.py
 ├── src/
+│   ├── __init__.py
 │   ├── batch_processor.py
 │   ├── document_tool.py
 │   ├── evaluation_agent.py
@@ -111,8 +116,13 @@ Ranks `1, 2, 3, ...` are assigned after sorting. The LLM does not determine rank
 │   ├── test_validation.py
 │   └── test_workflow_integration.py
 ├── sample_proposals/
-│   └── [four synthetic supplier PDFs]
+│   ├── apex_systems_proposal.pdf
+│   ├── brightpath_tech_proposal.pdf
+│   ├── nexaworks_proposal.pdf
+│   ├── orbit_digital_proposal.pdf
+│   └── synthetic_manifest.json
 ├── sample_outputs/
+│   ├── rfp_run_3.json
 │   └── rfp_run_8.json
 └── screenshots/
     ├── 01_evaluation_criteria.png
@@ -120,8 +130,11 @@ Ranks `1, 2, 3, ...` are assigned after sorting. The LLM does not determine rank
     ├── 03_leaderboard.png
     ├── 04_run_details.png
     ├── 05_detailed_scorecard.png
-    └── 06_evidence_and_risks.png
+    ├── 06_evidence_and_risks.png
+    └── 07_invalid_pdf_handling.png
 ```
+
+The SQLite database is created at runtime in the `database/` directory and is excluded from Git. The optional screenshots ZIP is not required because the individual screenshots are included above.
 
 ## Run locally on Windows / VS Code
 
@@ -161,7 +174,9 @@ At the time this documentation was prepared, **15 tests passed**, including test
 
 ## Sample output
 
-`sample_outputs/rfp_run_8.json` is the actual JSON export provided for Run 8. It contains four ranked suppliers:
+### Run 8
+
+`sample_outputs/rfp_run_8.json` contains the JSON export from Run 8. It includes four ranked suppliers:
 
 | Rank | Supplier | Absolute score | PPI |
 |---:|---|---:|---:|
@@ -170,27 +185,57 @@ At the time this documentation was prepared, **15 tests passed**, including test
 | 3 | Orbit Digital | 51.00% | 71.67% |
 | 4 | Brightpath Tech | 33.50% | 47.50% |
 
-The output reflects the criteria configuration and LLM scorecards used for that specific run. LLM scores can vary across separate evaluations; the Python scoring and ranking rules are deterministic once scorecards and metadata are fixed.
+### Run 3 and PDF validation
+
+`sample_outputs/rfp_run_3.json` contains the results of an additional evaluation run using four synthetic supplier proposals.
+
+The deployed application was also tested with an image-only PDF. The application displayed a validation message indicating that no extractable text was found, rather than crashing. The corresponding screenshot is `screenshots/07_invalid_pdf_handling.png`.
+
+All proposals used for demonstration are synthetic. LLM-generated evaluations may vary between runs, while the Python scoring and ranking calculations are deterministic for fixed scorecards and supplier metadata.
 
 ## Screenshots
 
-### Evaluation criteria
+### 1. Evaluation criteria
+
 ![Evaluation criteria](screenshots/01_evaluation_criteria.png)
 
-### Supplier input
+Shows the configurable evaluation criteria, active status, weights, and total active weight validation.
+
+### 2. Supplier input
+
 ![Supplier input](screenshots/02_supplier_input.png)
 
-### Leaderboard
+Shows supplier information, submission dates, historical experience ratings, and proposal upload controls.
+
+### 3. Leaderboard
+
 ![Leaderboard](screenshots/03_leaderboard.png)
 
-### Run details
+Shows supplier rankings, absolute weighted scores, Peer Performance Index (PPI), and the JSON download option.
+
+### 4. Run details
+
 ![Run details](screenshots/04_run_details.png)
 
-### Detailed scorecard
+Shows the selected evaluation run, its status, and detailed supplier evaluation information.
+
+### 5. Detailed scorecard
+
 ![Detailed scorecard](screenshots/05_detailed_scorecard.png)
 
-### Evidence and risks
+Shows criterion-level scores, weights, peer benchmarks, gaps, and relative performance.
+
+### 6. Evidence and risks
+
 ![Evidence and risks](screenshots/06_evidence_and_risks.png)
+
+Shows LLM-generated justifications, supporting evidence, and identified supplier risks.
+
+### 7. Invalid PDF handling
+
+![Invalid PDF handling](screenshots/07_invalid_pdf_handling.png)
+
+Shows the validation response when an uploaded image-only PDF contains no extractable text.
 
 ## Assumptions and limitations
 
