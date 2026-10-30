@@ -103,3 +103,61 @@ def test_valid_json_response_is_processed(mock_openai):
     assert scorecard["criteria"][0]["score"] == 4
     assert warnings == []
     mock_openai.return_value.chat.completions.create.assert_called_once()
+
+
+@patch("src.evaluation_agent.OpenAI")
+def test_retrieved_chunk_id_maps_to_original_pdf_source(mock_openai):
+    """Verify that a selected chunk ID maps to its real PDF source."""
+
+    retrieved_evidence = {
+        "1": [
+            {
+                "chunk_id": 2,
+                "page_number": 2,
+                "file_name": "BrightPath_Tech.pdf",
+                "text": "Security and compliance details.",
+                "similarity": 0.85,
+            }
+        ]
+    }
+
+    content = json.dumps({
+        "supplier_name": "BrightPath Tech",
+        "criteria": [
+            {
+                "criterion_id": 1,
+                "score": 3,
+                "max_score": 5,
+                "justification": "Basic security controls are described.",
+                "evidence": "The proposal mentions encryption and backups.",
+                "source_chunk_ids": [2],
+            }
+        ],
+        "risks": [],
+        "overall_summary": "Some security details are missing.",
+    })
+
+    mock_openai.return_value.chat.completions.create.return_value = (
+        make_api_response(content)
+    )
+
+    scorecard, warnings = evaluate_document(
+        supplier_name="BrightPath Tech",
+        document_text="Full proposal text.",
+        criteria=CRITERIA,
+        api_key="fake-test-key",
+        retrieved_evidence=retrieved_evidence,
+    )
+
+    criterion = scorecard["criteria"][0]
+
+    assert criterion["score"] == 3
+    assert criterion["sources"] == [
+        {
+            "file_name": "BrightPath_Tech.pdf",
+            "page_number": 2,
+        }
+    ]
+    assert warnings == []
+
+    mock_openai.return_value.chat.completions.create.assert_called_once()

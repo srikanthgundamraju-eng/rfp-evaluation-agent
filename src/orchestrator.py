@@ -9,11 +9,14 @@ def evaluate_supplier(
     criteria,
     api_key,
     file_name="",
+    document_pages=None,
 ):
     """Coordinate evidence retrieval and supplier evaluation."""
 
     retrieved_evidence = retrieve_relevant_chunks(
         document_text=document_text,
+        document_pages=document_pages,
+        file_name=file_name,
         criteria=criteria,
         api_key=api_key,
     )

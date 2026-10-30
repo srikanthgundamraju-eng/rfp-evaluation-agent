@@ -61,6 +61,8 @@ def test_orchestrator_passes_retrieved_evidence_to_evaluator():
 
     mock_retrieve.assert_called_once_with(
         document_text="Full proposal text.",
+        document_pages=None,
+        file_name="supplier_a.pdf",
         criteria=criteria,
         api_key="test-key",
     )

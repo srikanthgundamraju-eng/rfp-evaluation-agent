@@ -30,7 +30,6 @@ def chunk_text(text, chunk_size=1200, overlap=200):
     while start < len(text):
         end = min(start + chunk_size, len(text))
 
-        # Prefer a paragraph boundary near the end of the chunk.
         if end < len(text):
             boundary = text.rfind(
                 "\n", start + chunk_size // 2, end
@@ -39,14 +38,38 @@ def chunk_text(text, chunk_size=1200, overlap=200):
                 end = boundary
 
         chunk = text[start:end].strip()
+
         if chunk:
             chunks.append(chunk)
 
         if end >= len(text):
             break
 
-        # Retain some context from the previous chunk.
         start = max(start + 1, end - overlap)
+
+    return chunks
+
+
+def chunk_pdf_pages(pages, chunk_size=1200, overlap=200):
+    """Chunk page text while preserving original PDF page numbers."""
+    chunks = []
+    chunk_id = 0
+
+    for page in pages:
+        page_number = page["page_number"]
+        page_text = page["text"]
+
+        for text_chunk in chunk_text(
+            page_text,
+            chunk_size=chunk_size,
+            overlap=overlap,
+        ):
+            chunks.append({
+                "chunk_id": chunk_id,
+                "page_number": page_number,
+                "text": text_chunk,
+            })
+            chunk_id += 1
 
     return chunks
 
@@ -87,7 +110,6 @@ def embed_texts_in_batches(
             input=batch,
         )
 
-        # Response indices are local to each individual batch.
         ordered = sorted(
             response.data,
             key=lambda item: item.index,
@@ -103,19 +125,37 @@ def embed_texts_in_batches(
 
 
 def retrieve_relevant_chunks(
-    document_text,
-    criteria,
+    document_text=None,
+    criteria=None,
     api_key=None,
     top_k=3,
     chunk_size=1200,
     overlap=200,
     model=None,
+    document_pages=None,
+    file_name="",
 ):
-    """Retrieve the most relevant proposal chunks for each criterion."""
+    """Retrieve relevant proposal chunks and preserve source references."""
     if top_k < 1:
         raise ValueError("top_k must be at least 1.")
 
-    chunks = chunk_text(document_text, chunk_size, overlap)
+    if document_pages is not None:
+        chunks = chunk_pdf_pages(
+            document_pages,
+            chunk_size=chunk_size,
+            overlap=overlap,
+        )
+    else:
+        chunks = [
+            {
+                "chunk_id": index,
+                "page_number": None,
+                "text": text,
+            }
+            for index, text in enumerate(
+                chunk_text(document_text or "", chunk_size, overlap)
+            )
+        ]
 
     if not chunks:
         raise ValueError(
@@ -137,14 +177,12 @@ def retrieve_relevant_chunks(
     )
     client = OpenAI(api_key=api_key)
 
-    # Embed proposal chunks in batches.
     chunk_embeddings = embed_texts_in_batches(
         client=client,
-        texts=chunks,
+        texts=[chunk["text"] for chunk in chunks],
         model=model,
     )
 
-    # Create one query for each active evaluation criterion.
     queries = [
         (
             f"Evaluation criterion: {criterion['name']}. "
@@ -161,13 +199,13 @@ def retrieve_relevant_chunks(
 
     retrieved = {}
 
-    for criterion, query_embedding in zip(
-        criteria, query_embeddings
-    ):
+    for criterion, query_embedding in zip(criteria, query_embeddings):
         ranked = [
             {
-                "chunk_id": index,
-                "text": chunk,
+                "chunk_id": chunk["chunk_id"],
+                "page_number": chunk["page_number"],
+                "file_name": file_name,
+                "text": chunk["text"],
                 "similarity": cosine_similarity(
                     query_embedding,
                     chunk_embeddings[index],

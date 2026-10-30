@@ -327,6 +327,24 @@ else:
                         or "No evidence returned."
                     )
 
+                    # Show the original PDF pages used as evidence for this criterion.
+                    sources = criterion.get("sources", [])
+                    st.markdown("**Source references**")
+
+                    if sources:
+                        for source in sources:
+                            file_name = source.get("file_name", "Unknown file")
+                            page_number = source.get("page_number")
+
+                            if page_number:
+                                st.markdown(
+                                    f"- `{file_name}` — Page {page_number}"
+                                )
+                            else:
+                                st.markdown(f"- `{file_name}`")
+                    else:
+                        st.caption("No source references available for this criterion.")
+
                     st.caption(
                         "Verify this LLM-generated evidence against the "
                         "original proposal before relying on it."
